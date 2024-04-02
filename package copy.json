@@ -1,0 +1,28 @@
+{
+    "name": "pact-example-jest",
+    "version": "1.0.0",
+    "description": "Jest Pact example",
+    "main": "index.js",
+    "scripts": {
+        "test": "rimraf pact && jest __tests__/ --runInBand",
+        "test:provider": "jest provider_test/ --runInBand",
+        "test:publish": "pact-broker publish pact/pacts --consumer-app-version=1.0.1  --broker-base-url=https://nareshtest.pactflow.io --broker-token=5gFImWvd4sXY280BZpfh2A"
+    },
+    "license": "MIT",
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "devDependencies": {
+        "@pact-foundation/pact": "12.1.2",
+        "absolute-version": "1.0.2",
+        "axios": "^1.6.5",
+        "jest": "^29.7.0",
+        "jest-pact": "^0.11.0",
+        "rimraf": "5.0.5"
+    },
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "cors": "^2.8.5",
+        "express": "^4.19.2"
+    }
+}
